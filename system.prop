@@ -29,6 +29,9 @@ dalvik.vm.systemuicompilerfilter=speed
 # Feature flags
 persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
 
+# Disable MTE Async for system server
+persist.arm64.memtag.system_server=off
+
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
