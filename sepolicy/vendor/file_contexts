@@ -80,6 +80,9 @@
 # NFC
 /vendor/bin/hw/android\.hardware\.nfc_snxxx@1\.2-service                u:object_r:hal_nfc_default_exec:s0
 
+# Ntsync
+/dev/ntsync                                                                                         u:object_r:ntsync_device:s0
+
 # Persist subsystem
 /mnt/vendor/persist/subsys(/.*)?                                        u:object_r:persist_subsys_file:s0
 
