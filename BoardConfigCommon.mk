@@ -87,11 +87,14 @@ BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
-TARGET_KERNEL_CONFIG := \
-    vendor/kona-perf_defconfig \
-    vendor/debugfs.config \
-    vendor/xiaomi/sm8250-common.config
+
+# Precompiled kernel, dtbo, and dtb
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_PREBUILT_KERNEL := kernel/xiaomi/sm8250/Image
+PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
+BOARD_PREBUILT_DTBOIMAGE := kernel/xiaomi/sm8250/dtbo.img
+TARGET_PREBUILT_DTB := kernel/xiaomi/sm8250/dtb
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
