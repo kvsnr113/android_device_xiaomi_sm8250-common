@@ -112,6 +112,10 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
 TARGET_KERNEL_CONFIG := vendor/munch_defconfig
 
+# Toolchains for kernel
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_PATH := /home/vyn/113/workspace/toolchains/llvm-clang
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 ifeq ($(TARGET_IS_VAB),true)
