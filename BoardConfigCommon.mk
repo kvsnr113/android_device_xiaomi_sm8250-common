@@ -123,7 +123,7 @@ TARGET_KERNEL_CONFIG := vendor/munch_defconfig
 
 # Toolchains for kernel
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_PATH := /home/vyn/113/workspace/toolchains/llvm-clang
+TARGET_KERNEL_CLANG_PATH := /home/vyn/113/workspace/toolchains/clang
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
